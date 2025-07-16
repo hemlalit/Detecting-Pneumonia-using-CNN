@@ -8,7 +8,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 
 # Load model
-model = load_model('pnuemonia pred model.keras')
+model = load_model('pnuemonia pred model.h5')
 
 # Class labels
 class_labels = ['Normal', 'Pneumonia']
