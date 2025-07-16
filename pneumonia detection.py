@@ -1,40 +1,3 @@
-# import streamlit as st
-# import numpy as np
-# from PIL import Image
-# import time
-# from tensorflow.keras.models import load_model
-# from tensorflow.keras.preprocessing import image
-
-# model = load_model('../pnuemonia pred model.keras')
-
-# st.title("📷Pnuemonia Detector")
-# st.subheader("Upload an X-Ray image")
-
-# class_labels = ['Not Detected', 'Pneumonia Detected']
-
-# uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
-
-# if uploaded_file is not None:
-#     img = Image.open(uploaded_file) 
-
-#     st.image(img, caption="Selected Image", width=200)
-
-#     with st.spinner('Detecting...'):
-#         img = img.resize((32,32))
-#         img_array = image.img_to_array(img)
-#         img_array = np.expand_dims(img_array, axis=0)
-        
-#         prediction = model.predict(img_array)
-#         predicted_prob = prediction[0][0]
-#         threshold = 0.5  # default decision threshold
-#         predicted_label = class_labels[int(predicted_prob > threshold)]
-#         confidence = predicted_prob if predicted_prob > threshold else 1 - predicted_prob
-#         time.sleep(1) 
-
-#     st.markdown(f"### ✅ Predicted Class: `{predicted_label}`")
-#     st.markdown(f"**Confidence:** {confidence:.2f}")
-
-
 import streamlit as st
 import numpy as np
 from PIL import Image
@@ -45,7 +8,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 
 # Load model
-model = load_model('../pnuemonia pred model.keras')
+model = load_model('pnuemonia pred model.keras')
 
 # Class labels
 class_labels = ['Normal', 'Pneumonia']
